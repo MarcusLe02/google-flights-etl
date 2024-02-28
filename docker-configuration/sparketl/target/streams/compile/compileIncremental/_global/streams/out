@@ -1,0 +1,55 @@
+[0m[[0m[0mdebug[0m] [0m[0m[zinc] IncrementalCompile -----------[0m
+[0m[[0m[0mdebug[0m] [0m[0mIncrementalCompile.incrementalCompile[0m
+[0m[[0m[0mdebug[0m] [0m[0mprevious = Stamps for: 0 products, 0 sources, 0 libraries[0m
+[0m[[0m[0mdebug[0m] [0m[0mcurrent source = Set(${BASE}/src/main/scala/Ingestion.scala)[0m
+[0m[[0m[0mdebug[0m] [0m[0m> initialChanges = InitialChanges(Changes(added = Set(${BASE}/src/main/scala/Ingestion.scala), removed = Set(), changed = Set(), unmodified = ...),Set(),Set(),API Changes: Set())[0m
+[0m[[0m[0mdebug[0m] [0m[0mFull compilation, no sources in previous analysis.[0m
+[0m[[0m[0mdebug[0m] [0m[0mall 1 sources are invalidated[0m
+[0m[[0m[0mdebug[0m] [0m[0mInitial set of included nodes: [0m
+[0m[[0m[0mdebug[0m] [0m[0mRecompiling all sources: number of invalidated sources > 50.0 percent of all sources[0m
+[0m[[0m[0mdebug[0m] [0m[0mcompilation cycle 1[0m
+[0m[[0m[0minfo[0m] [0m[0mcompiling 1 Scala source to /Users/marcusle02/Documents/Learning/hadoop_big_data/google_flight_etl/mysql-hadoop-spark-hive/sparketl/target/scala-2.12/classes ...[0m
+[0m[[0m[0mdebug[0m] [0m[0mGetting org.scala-sbt:compiler-bridge_2.12:1.9.5:compile for Scala 2.12.11[0m
+[0m[[0m[0minfo[0m] [0m[0mNon-compiled module 'compiler-bridge_2.12' for Scala 2.12.11. Compiling...[0m
+[0m[[0m[0mdebug[0m] [0m[0mCreating plain compiler interface for 2.12.11.[0m
+[0m[[0m[0mdebug[0m] [0m[0m  > Arguments: [0m
+[0m[[0m[0mdebug[0m] [0m[0m	-d[0m
+[0m[[0m[0mdebug[0m] [0m[0m	/var/folders/1b/x7fbnbjn5q71rst8f3t6yr_h0000gn/T/sbt_851b1a2d[0m
+[0m[[0m[0mdebug[0m] [0m[0m	-nowarn[0m
+[0m[[0m[0mdebug[0m] [0m[0m	-bootclasspath[0m
+[0m[[0m[0mdebug[0m] [0m[0m	/Users/marcusle02/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.12.11/scala-library-2.12.11.jar[0m
+[0m[[0m[0mdebug[0m] [0m[0m	-classpath[0m
+[0m[[0m[0mdebug[0m] [0m[0m	/Users/marcusle02/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-sbt/compiler-interface/1.9.5/compiler-interface-1.9.5.jar:/Users/marcusle02/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-sbt/util-interface/1.9.4/util-interface-1.9.4.jar:/Users/marcusle02/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-sbt/compiler-bridge_2.12/1.9.5/compiler-bridge_2.12-1.9.5-sources.jar:/Users/marcusle02/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-compiler/2.12.11/scala-compiler-2.12.11.jar:/Users/marcusle02/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.12.11/scala-reflect-2.12.11.jar:/Users/marcusle02/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/modules/scala-xml_2.12/1.0.6/scala-xml_2.12-1.0.6.jar:/Users/marcusle02/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/jline/jline/2.14.6/jline-2.14.6.jar:/Users/marcusle02/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/fusesource/jansi/jansi/1.12/jansi-1.12.jar[0m
+[0m[[0m[0mdebug[0m] [0m[0m	/var/folders/1b/x7fbnbjn5q71rst8f3t6yr_h0000gn/T/sbt_d0a00435/scala/ZincCompat.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	/var/folders/1b/x7fbnbjn5q71rst8f3t6yr_h0000gn/T/sbt_d0a00435/xsbt/API.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	/var/folders/1b/x7fbnbjn5q71rst8f3t6yr_h0000gn/T/sbt_d0a00435/xsbt/AbstractZincFile.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	/var/folders/1b/x7fbnbjn5q71rst8f3t6yr_h0000gn/T/sbt_d0a00435/xsbt/Analyzer.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	/var/folders/1b/x7fbnbjn5q71rst8f3t6yr_h0000gn/T/sbt_d0a00435/xsbt/CallbackGlobal.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	/var/folders/1b/x7fbnbjn5q71rst8f3t6yr_h0000gn/T/sbt_d0a00435/xsbt/ClassName.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	/var/folders/1b/x7fbnbjn5q71rst8f3t6yr_h0000gn/T/sbt_d0a00435/xsbt/Compat.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	/var/folders/1b/x7fbnbjn5q71rst8f3t6yr_h0000gn/T/sbt_d0a00435/xsbt/CompilerBridge.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	/var/folders/1b/x7fbnbjn5q71rst8f3t6yr_h0000gn/T/sbt_d0a00435/xsbt/ConsoleBridge.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	/var/folders/1b/x7fbnbjn5q71rst8f3t6yr_h0000gn/T/sbt_d0a00435/xsbt/DelegatingReporter.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	/var/folders/1b/x7fbnbjn5q71rst8f3t6yr_h0000gn/T/sbt_d0a00435/xsbt/Dependency.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	/var/folders/1b/x7fbnbjn5q71rst8f3t6yr_h0000gn/T/sbt_d0a00435/xsbt/ExtractAPI.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	/var/folders/1b/x7fbnbjn5q71rst8f3t6yr_h0000gn/T/sbt_d0a00435/xsbt/ExtractUsedNames.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	/var/folders/1b/x7fbnbjn5q71rst8f3t6yr_h0000gn/T/sbt_d0a00435/xsbt/GlobalHelpers.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	/var/folders/1b/x7fbnbjn5q71rst8f3t6yr_h0000gn/T/sbt_d0a00435/xsbt/InteractiveConsoleBridge.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	/var/folders/1b/x7fbnbjn5q71rst8f3t6yr_h0000gn/T/sbt_d0a00435/xsbt/InteractiveConsoleFactoryBridge.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	/var/folders/1b/x7fbnbjn5q71rst8f3t6yr_h0000gn/T/sbt_d0a00435/xsbt/InteractiveConsoleHelper.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	/var/folders/1b/x7fbnbjn5q71rst8f3t6yr_h0000gn/T/sbt_d0a00435/xsbt/InteractiveConsoleResponse.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	/var/folders/1b/x7fbnbjn5q71rst8f3t6yr_h0000gn/T/sbt_d0a00435/xsbt/JarUtils.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	/var/folders/1b/x7fbnbjn5q71rst8f3t6yr_h0000gn/T/sbt_d0a00435/xsbt/JavaUtils.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	/var/folders/1b/x7fbnbjn5q71rst8f3t6yr_h0000gn/T/sbt_d0a00435/xsbt/LocalToNonLocalClass.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	/var/folders/1b/x7fbnbjn5q71rst8f3t6yr_h0000gn/T/sbt_d0a00435/xsbt/LocateClassFile.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	/var/folders/1b/x7fbnbjn5q71rst8f3t6yr_h0000gn/T/sbt_d0a00435/xsbt/Log.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	/var/folders/1b/x7fbnbjn5q71rst8f3t6yr_h0000gn/T/sbt_d0a00435/xsbt/Message.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	/var/folders/1b/x7fbnbjn5q71rst8f3t6yr_h0000gn/T/sbt_d0a00435/xsbt/PlainNioFile.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	/var/folders/1b/x7fbnbjn5q71rst8f3t6yr_h0000gn/T/sbt_d0a00435/xsbt/ScaladocBridge.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m      [0m
+[0m[[0m[0minfo[0m] [0m[0mAttempting to fetch org.scala-sbt:compiler-bridge_2.12:1.9.5.[0m
+[0m[[0m[0minfo[0m] [0m[0mUpdating [0m
+[0m[[0m[0minfo[0m] [0m[0mResolved  dependencies[0m
+[0m[[0m[0minfo[0m] [0m[0mFetching artifacts of [0m
+[0m[[0m[0minfo[0m] [0m[0mFetched artifacts of [0m
+[0m[[0m[31merror[0m] [0m[0m(Compile / [31mcompileIncremental[0m) Error compiling the sbt component 'compiler-bridge_2.12'[0m
