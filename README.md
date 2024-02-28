@@ -6,7 +6,7 @@ This repository contains the source code and documentation for the Google Flight
 
 ## System Architecture
 
-![System Architecture](https://github.com/MarcusLe02/big-data-tv-production/blob/main/contract_interaction.png)
+![System Architecture](https://github.com/MarcusLe02/google-flights-etl/blob/main/google-flights-pipeline.png)
 
 ## Project Structure
 
