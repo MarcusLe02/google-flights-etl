@@ -1,4 +1,4 @@
-# Google Flight ETL Project (Draft)
+# Google Flights ETL Project
 
 ## Overview
 
