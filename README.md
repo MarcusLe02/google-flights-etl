@@ -45,14 +45,14 @@ This repository contains the source code and documentation for the Google Flight
     python flight_selenium.py
     ```
 
-4. Execute the ingestion process:
+4. Execute the Hadoop ingestion process:
 
     ```bash
     docker exec -it namenode bash
     spark-submit --master spark://spark-master:7077 --py-files pyspark-jobs/ingestion.py
     ```
 
-4. Execute the transformation process:
+4. Execute the Hive transformation process:
 
     ```bash
     docker exec -it namenode bash
