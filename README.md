@@ -10,11 +10,6 @@ This repository contains the source code and documentation for the Google Flight
 
 ## Project Structure
 
-- **`src/`**: Contains the source code for the web scraping and ETL processes.
-- **`config/`**: Configuration files for the project settings.
-- **`mysql-hadoop-spark-hive/`**: Docker-related files, including Dockerfiles for different components.
-- **`data/`**: Placeholder for the data generated or used by the project.
-
 ## Components
 
 - **Selenium**: Web scraping tool used for extracting flight data from Google Flights.
@@ -44,17 +39,25 @@ This repository contains the source code and documentation for the Google Flight
     docker-compose up -d
     ```
 
-3. Execute the ETL process:
+3. Execute the data crawling process:
 
     ```bash
-    # Placeholder command, update based on your actual ETL process
     python flight_selenium.py
     ```
 
+4. Execute the ingestion process:
 
-## Contributing
+    ```bash
+    docker exec -it namenode bash
+    spark-submit --master spark://spark-master:7077 --py-files pyspark-jobs/ingestion.py
+    ```
 
-If you'd like to contribute to the project, please follow the guidelines in [CONTRIBUTING.md](CONTRIBUTING.md).
+4. Execute the transformation process:
+
+    ```bash
+    docker exec -it namenode bash
+    spark-submit --master spark://spark-master:7077 --py-files pyspark-jobs/transformation.py
+    ```
 
 ## Acknowledgments
 
