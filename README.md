@@ -35,7 +35,7 @@ This repository contains the source code and documentation for the Google Flight
 2. Build and run the Docker containers:
 
     ```bash
-    cd mysql-hadoop-spark-hive
+    cd docker-configuration
     docker-compose up -d
     ```
 
