@@ -59,6 +59,17 @@ This repository contains the source code and documentation for the Google Flight
     spark-submit --master spark://spark-master:7077 --py-files pyspark-jobs/transformation.py --executionDate "YYYY-MM-DD"
     ```
 
+5. Connect to Superset dashboard via Superset configurations and design with your own style
+
+    ```bash
+    export SUPERSET_VERSION=<latest_version>
+    docker pull apache/superset:$SUPERSET_VERSION
+    docker run -d -p 8080:8088 \
+             -e "SUPERSET_SECRET_KEY=$(openssl rand -base64 42)" \
+             -e "TALISMAN_ENABLED=False" \
+             --name superset apache/superset:$SUPERSET_VERSION
+    ```
+
 ## Acknowledgments
 
 This project is inspired by the Data Lake & Warehousing demo by Mr. Canh Tran (Data Guy Story). The architecture design, ingestion, and transformation scripts in Spark (Scala) were outlined in a video available [here](https://www.youtube.com/watch?v=Kpl35Q6G4uw&t=770s). I adapted the scripts to use PySpark for implementation.

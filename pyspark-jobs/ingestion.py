@@ -24,7 +24,8 @@ month = runTime[1]
 day = runTime[2]
 
 # Create Spark session
-spark = SparkSession.builder.appName("Ingestion - from MySQL to Hive").getOrCreate()
+spark = SparkSession.builder.appName("Ingestion - from MySQL to Hive") \
+                            .config('spark.driver.extraClassPath', '/opt/homebrew/Cellar/apache-spark/3.5.0/libexec/jars/mysql-connector-j-8.2.0.jar').getOrCreate()
 
 # Namenode and datanode configuration
 namenodeHost = "namenode"
