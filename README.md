@@ -45,18 +45,18 @@ This repository contains the source code and documentation for the Google Flight
     python flight_selenium.py
     ```
 
-4. Execute the Hadoop ingestion process:
+4. Execute the Hadoop ingestion process, remember to change execution date parameter to your current date:
 
     ```bash
     docker exec -it namenode bash
-    spark-submit --master spark://spark-master:7077 --py-files pyspark-jobs/ingestion.py
+    spark-submit --master spark://spark-master:7077 --py-files pyspark-jobs/ingestion.py --tblName "flights" --executionDate "YYYY-MM-DD"
     ```
 
 4. Execute the Hive transformation process:
 
     ```bash
     docker exec -it namenode bash
-    spark-submit --master spark://spark-master:7077 --py-files pyspark-jobs/transformation.py
+    spark-submit --master spark://spark-master:7077 --py-files pyspark-jobs/transformation.py --executionDate "YYYY-MM-DD"
     ```
 
 ## Acknowledgments
