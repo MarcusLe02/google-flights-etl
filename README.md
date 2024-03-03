@@ -59,7 +59,7 @@ This repository contains the source code and documentation for the Google Flight
     spark-submit --master spark://spark-master:7077 --py-files pyspark-jobs/transformation.py --executionDate "YYYY-MM-DD"
     ```
 
-5. Deploy Superset, and connect Hive to Superset dashboard and design with your own style:
+5. Deploy Superset, connect Hive to Superset dashboard, and design with your own style:
 
     ```bash
     export SUPERSET_VERSION=<latest_version>
