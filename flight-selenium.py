@@ -6,20 +6,20 @@ import pandas as pd
 import datetime
 import time
 
-mydb = mysql.connector.connect(
-        host='localhost',
-        user='marcus',
-        password='5nam',
-        database='google_flight'
-)
-
-print("Connected to MySQL")
-
 CURRENT_DATE = datetime.datetime.now().strftime("%Y-%m-%d")
 
-mycursor = mydb.cursor()
+def connect_mysql(host, user, pw, db):
 
-def scrape(departure_city, arrival_city, date_leave, date_return, max_retries=5):
+    mydb = mysql.connector.connect(
+            host=host,
+            user=user,
+            password=pw,
+            database=db
+    )
+    print("Connected to MySQL")
+    return mydb
+
+def scrape(mydb, departure_city, arrival_city, date_leave, date_return, max_retries=5):
     retries = 0
 
     while retries < max_retries:
@@ -57,6 +57,7 @@ def scrape(departure_city, arrival_city, date_leave, date_return, max_retries=5)
                 all_prices.append(price)
 
                 # Insert data into MySQL:
+                mycursor = mydb.cursor()
                 sql = """INSERT INTO flights (departure, arrival, date_leave, date_return, 
                 depart_time, arrive_time, company, price, scraping_date) 
                 VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)"""
@@ -94,19 +95,17 @@ def scrape(departure_city, arrival_city, date_leave, date_return, max_retries=5)
         else:
             print(f'Retrying scraping for {departure_city},{arrival_city},{date_leave},{date_return}')
             retries += 1
-            # Sleep for a few seconds before retrying
+
             time.sleep(2)
 
     print(f'Max retries reached for {departure_city},{arrival_city},{date_leave},{date_return}')
-    return None  # Return None if max retries are reached without success
-
+    return None  
 
 def convert_time(time_str):
     if "+1" in time_str:
         time_str = time_str[:-2]
     # Check if the time_str contains "AM"
     if "AM" in time_str:
-        # Remove "AM" and return the time as is
         return time_str.replace("AM", "").strip()
     elif "PM" in time_str:
         # Remove "PM" and split the time into hours and minutes
@@ -119,30 +118,35 @@ def convert_time(time_str):
             # Construct and return the modified time string
             return f"{hour:02d}:{time_parts[1]}"
     
-    # If "AM" or "PM" is not found, return the time as is
     return time_str
 
-# Create an empty list to store the results of each scrape
-results = []
+def multi_scrape(mydb, departure_city, arrival_city, dates_leave, dates_return):
+    results = []
+    for dl in dates_leave:
+        for dr in dates_return:
+            result = scrape(mydb, departure_city, arrival_city, dl, dr)
+            results.append(result)
+    return results
 
-# Define the date combinations you want to scrape
-date_leave = ['2024-02-05', '2024-02-06', '2024-02-07']
-date_return = ['2024-02-16', '2024-02-17', '2024-02-18']
 
-# Perform the scrapes and store the results in the list
-for dl in date_leave:
-    for dr in date_return:
-        result = scrape('HCM', 'HAN', dl, dr)
-        results.append(result)
+if __name__ == "__main__":
 
-# Concatenate all the results into a single DataFrame
-final_df = pd.concat(results, ignore_index=True)
+    mydb = connect_mysql(host='localhost', user='root', pw='5nam', db='google_flight')
 
-# Add the current date column to the file and file name
-final_df['Scraping Date'] = CURRENT_DATE
-file_name = f"//Users/marcusle02/Documents/Learning/hadoop_big_data/google_flight_etl/daily_flight_data/flight_data_v2_{CURRENT_DATE}.csv"
+    # Define the date combinations amd cities you want to scrape
+    departure_city = 'HCM'
+    arrival_city = 'HAN'
+    dates_leave = ['2024-02-05', '2024-02-06', '2024-02-07']
+    dates_return = ['2024-02-16', '2024-02-17', '2024-02-18']
 
-# Save the concatenated file as a CSV file
-final_df.to_csv(file_name, index=False, encoding='utf-8')
+    results = multi_scrape(mydb, departure_city, arrival_city, dates_leave, dates_return)
 
-print(f"Data saved to {file_name}")
+    # Concatenate all the results into a single DataFrame
+    final_df = pd.concat(results, ignore_index=True)
+    final_df['Scraping Date'] = CURRENT_DATE
+    file_name = f"//Users/marcusle02/Documents/Learning/hadoop_big_data/google_flight_etl/daily_flight_data/flight_data_v2_{CURRENT_DATE}.csv"
+
+    # Save a copy of scraping data
+    final_df.to_csv(file_name, index=False, encoding='utf-8')
+
+    print(f"Data saved to {file_name}")

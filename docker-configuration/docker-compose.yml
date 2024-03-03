@@ -67,7 +67,7 @@ services:
       - datanode
     ports:
       - "8080:8080"
-      - "7077:7077"
+      - "7078:7078"
     environment:
       - INIT_DAEMON_STEP=setup_spark
       - CORE_CONF_fs_defaultFS=hdfs://namenode:9000
@@ -117,7 +117,7 @@ services:
     container_name: mysql
     environment:
       MYSQL_ROOT_PASSWORD: 5nam
-      MYSQL_DATABASE: google_flight
+      MYSQL_DATABASE: google_flights
       MYSQL_USER: marcus
       MYSQL_PASSWORD: 5nam
     volumes:
