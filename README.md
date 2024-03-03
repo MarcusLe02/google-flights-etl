@@ -59,16 +59,22 @@ This repository contains the source code and documentation for the Google Flight
     spark-submit --master spark://spark-master:7077 --py-files pyspark-jobs/transformation.py --executionDate "YYYY-MM-DD"
     ```
 
-5. Connect to Superset dashboard via Superset configurations and design with your own style
+5. Deploy Superset, and connect Hive to Superset dashboard and design with your own style:
 
     ```bash
     export SUPERSET_VERSION=<latest_version>
+
     docker pull apache/superset:$SUPERSET_VERSION
-    docker run -d -p 8080:8088 \
+
+    docker run -d -p 8088:8088 \
              -e "SUPERSET_SECRET_KEY=$(openssl rand -base64 42)" \
              -e "TALISMAN_ENABLED=False" \
              --name superset apache/superset:$SUPERSET_VERSION
     ```
+
+## Superset Dashboard Example
+
+![System Architecture](https://github.com/MarcusLe02/google-flights-etl/blob/main/dashboard.png)
 
 ## Acknowledgments
 
